@@ -32,18 +32,18 @@ bosh create-env ${CONCOURSE_DEPLOYMENT}/lite/concourse.yml \
 #   value: 0.0340
 - type: replace
   path: /resource_pools/0/cloud_properties/instance_type
-  value: t2.medium
+  value: m4.large
 - type: replace
   path: /resource_pools/0/cloud_properties/spot_bid_price?
-  value: 0.0190
+  value: 0.0360
 - type: replace
   path: /resource_pools/0/cloud_properties/spot_ondemand_fallback?
   value: true
 - type: replace
   path: /resource_pools/name=vms/cloud_properties/ephemeral_disk
   value: 
-    size: 30_000
-    type: standard
+    size: 200_000
+    type: gp2
 - type: replace
   path: /disk_pools/name=disks/cloud_properties/type?
   value: standard
