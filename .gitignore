@@ -3,4 +3,5 @@ terraform.tfvars
 terraform.tfstate*
 concourse-creds.yml
 concourse-state.json
+*.pem
 plan
