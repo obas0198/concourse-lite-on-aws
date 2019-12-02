@@ -32,7 +32,7 @@ bosh create-env ${CONCOURSE_DEPLOYMENT}/lite/concourse.yml \
 #   value: 0.0340
 - type: replace
   path: /resource_pools/0/cloud_properties/instance_type
-  value: m4.large
+  value: m5.large
 - type: replace
   path: /resource_pools/0/cloud_properties/spot_bid_price?
   value: 0.0360
@@ -84,6 +84,13 @@ bosh create-env ${CONCOURSE_DEPLOYMENT}/lite/concourse.yml \
   value: 
     url: https://bosh.io/d/stemcells/bosh-aws-xen-hvm-ubuntu-xenial-go_agent?v=170.38
     sha1: c42f5de98fc6419f341af1732ff0c1e885a25227
+- path: /releases/name=bosh-aws-cpi
+  type: replace
+  value:
+    name: bosh-aws-cpi
+    sha1: 63de6b7dcbf271543e23510dae20c0b436b59ce8
+    url: https://bosh.io/d/github.com/cloudfoundry/bosh-aws-cpi-release?v=79
+    version: 79
 EOF) \
   -l ${CONCOURSE_DEPLOYMENT}/versions.yml \
   --vars-store concourse-creds.yml \
