@@ -92,7 +92,7 @@ bosh create-env ${CONCOURSE_DEPLOYMENT}/lite/concourse.yml \
     url: https://bosh.io/d/github.com/cloudfoundry/bosh-aws-cpi-release?v=79
     version: 79
 EOF) \
-  -l ./versions.yml \
+  -l ${CONCOURSE_DEPLOYMENT}/versions.yml \
   --vars-store concourse-creds.yml \
   -v public_ip=${PUBLIC_IP} \
   -v az=${AVAILABILITY_ZONE} \
