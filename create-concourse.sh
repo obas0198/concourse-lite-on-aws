@@ -35,7 +35,7 @@ bosh create-env ${CONCOURSE_DEPLOYMENT}/lite/concourse.yml \
   value: m5.large
 - type: replace
   path: /resource_pools/0/cloud_properties/spot_bid_price?
-  value: 0.0370
+  value: 0.0372
 - type: replace
   path: /resource_pools/0/cloud_properties/spot_ondemand_fallback?
   value: true
